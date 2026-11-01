@@ -1,4 +1,4 @@
-const API_URL = "http://52.47.138.195:5000";
+const API_URL = "http://localhost:5000";
 
 
 
