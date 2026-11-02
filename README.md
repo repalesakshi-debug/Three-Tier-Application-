@@ -25,19 +25,19 @@ IMAGE_TAG=dev-a82f91c7d123456789abcdef123456789abcdef12
 ### Pull Backend Image
 
 ```bash
-docker pull gauravhalnawar123/my-webapp-backend:$IMAGE_TAG
+docker pull DOCKERHUB_USERNAME/my-webapp-backend:$IMAGE_TAG
 ```
 
 ### Pull Frontend Image
 
 ```bash
-docker pull gauravhalnawar123/my-webapp-frontend:$IMAGE_TAG
+docker pull DOCKERHUB_USERNAME/my-webapp-frontend:$IMAGE_TAG
 ```
 
 ### Pull Database Image
 
 ```bash
-docker pull gauravhalnawar123/my-webapp-database:$IMAGE_TAG
+docker pull DOCKERHUB_USERNAME/my-webapp-database:$IMAGE_TAG
 ```
 
 Verify downloaded images:
@@ -57,7 +57,7 @@ docker run -d \
   -e POSTGRES_PASSWORD=12345 \
   -e POSTGRES_DB=mydatabase \
   -v pgdata:/var/lib/postgresql/data \
-  gauravhalnawar123/my-webapp-database:$IMAGE_TAG
+DOCKERHUB_USERNAME/my-webapp-database:$IMAGE_TAG
 ```
 
 Check PostgreSQL logs:
@@ -89,7 +89,7 @@ docker run -d \
   -e DB_SSLMODE=disable \
   -e CORS_ORIGINS="*" \
   -p 5000:5000 \
-  gauravhalnawar123/my-webapp-backend:$IMAGE_TAG
+ DOCKERHUB_USERNAME/my-webapp-backend:$IMAGE_TAG
 ```
 
 Check backend logs:
@@ -119,7 +119,7 @@ docker run -d \
   --restart unless-stopped \
   -e API_URL="https://5229138bd58d33e0-1-5000.papa.r.killercoda.com" \
   -p 3000:80 \
-  gauravhalnawar123/my-webapp-frontend:$IMAGE_TAG
+ DOCKERHUB_USERNAME/my-webapp-frontend:$IMAGE_TAG
 ```
 
 For AWS EC2:
@@ -133,7 +133,7 @@ docker run -d \
   --restart unless-stopped \
   -e API_URL="http://YOUR_EC2_PUBLIC_IP:5000" \
   -p 3000:80 \
-  gauravhalnawar123/my-webapp-frontend:$IMAGE_TAG
+DOCKERHUB_USERNAME/my-webapp-frontend:$IMAGE_TAG
 ```
 
 ## 8. Verify Running Containers
